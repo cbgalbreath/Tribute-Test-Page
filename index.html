@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
   <head>
     <title>David "The Admiral" Robinson</title>
     <link href="style.css" rel="stylesheet" type="text/css">
@@ -14,10 +14,19 @@
         
       </div>
       <div id="tribute-info">
+        <div class="tabs-container">
+          <ul class="tabs">
+            <li class="tab active" id="bio">Bio</li>
+            <li class="tab" id="college">College</li>
+            <li class="tab" id="usa">Team USA</li>
+            <li class="tab" id="pro">NBA</li>
+            <li class="tab" id="hall">Hall of Fame</li>
+            <li class="tab" id="off">Off-Court</li>
+          </ul>
+        </div>
         <div class="align-block">
-        <div class="bio">
-        <h3>Bio</h3>
-        <ul id="Bio">
+        <div class="section active" id="bio">
+        <ul>
           <li>Born: August 5, 1965 in Key West, FL</li>
           <li>College: US Naval Academy (1983-1987)</li>
           <li>Military: US Navy (1983-1989).</li>
@@ -28,9 +37,8 @@
           <li>Position: Center</li>
         </ul>
       </div>
-          <div class="college">
-          <h3>College Achievements</h3>
-          <ul id="college">
+          <div class="section" id="college">
+          <ul>
             <li>NCAA Tournament Elite Eight (1986)</li>
             <li>NCAA Player of the Year (1987)</li>
             <li>NCAA Blocks Leader (1986, 1987)</li>
@@ -45,9 +53,8 @@
             <li>NCAA Silver Anniversary Award (2012)</li>
         </ul>
       </div>
-        <div class="usa">       
-            <h3>Team USA</h3>
-            <ul id="USA">
+        <div class="section" id="usa">       
+            <ul>
               <li> Gold Medal: 1986 World Championships</li>
               <li> USA Basketball Male Athlete of the Year(1986)</li>
               <li> Silver Medal: 1987 Pan-American Games</li>
@@ -56,9 +63,8 @@
               <li> Gold Medal: 1996 Olympics</li>
         </ul>
       </div>    
-        <div class="nba">
-        <h3>NBA Achievements</h3>
-        <ul id="NBA">
+        <div class="section" id="pro">
+        <ul>
           <li>NBA Champion (1999, 2003)</li>
           <li>NBA MVP (1995)</li>
           <li>NBA All-Star (1990-1996, 1998, 2000-2001)</li>
@@ -83,18 +89,16 @@
           <li>April 24, 1994: Scored 71 points vs. LA Clippers</li>
         </ul>
         </div>
-        <div class="hall">
-        <h3>Halls of Fame</h3>
-        <ul id="halls">
+        <div class="section" id="hall">
+        <ul>
         <li>Naismith Basketball Hall of Fame (2009, 2010*)</li>
         <li>US Olympic Hall of Fame (2008, 2009*)</li>
         <li>FIBA Hall of Fame (2013, 2017*)</li>
         </ul>
       <p>*-As a member of the Dream Team</p>
     </div>
-    <div class="off">
-      <h3>Off the Court</h3>
-      <ul id="other">
+    <div class="section" id="off">
+      <ul>
         <li>1987: Graduated from Naval Academy with BS in Mathematics</li>
         <li>1987-1989: Served in Civil Engineering Corps as part of Naval service.</li>
         <li>2001: Founded Carver Academy (now called IDEA Carver)</li>
@@ -111,6 +115,33 @@
         <p>For more information, please visit his page on <a href="https://en.wikipedia.org/wiki/David_Robinson" id="tribute-link" target="_blank">Wikipedia</a>.</p>
       </div>
      <div>
+
+      <script>
+        const sections = document.querySelectorAll('.section');
+        const tabs = document.querySelectorAll('.tab');
+        
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", contentChange);
+        })
+
+        function contentChange(event){
+            const element = event.target;
+            console.log(element);
+            const id = element.id;
+            tabs.forEach((tab) =>{
+              tab.classList.remove('active');
+              if (id === tab.id){
+                tab.classList.add('active');
+              }
+            })
+            sections.forEach((section) => {
+              section.classList.remove('active');
+              if (id === section.id){
+                section.classList.add('active');
+              }
+            })
+          }
+      </script>
   </body>
 </html>
 

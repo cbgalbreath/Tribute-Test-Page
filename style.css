@@ -43,9 +43,34 @@ h3 {
   width: 80%;
 }
 
+.tabs-container{
+  align-content: left;
+}
+.tabs{
+  display: flex;
+  font-weight: bold;
+}
+
+.tab{
+  padding: 10px;
+}
+
+.tab.active, .tab:hover{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
 
 ul{
   list-style-type: none;
+}
+
+.section{
+  display: none;
+}
+
+.section.active{
+  display: block;
 }
 
 @media (max-width: 800px){
