@@ -7,10 +7,40 @@
   <body>
     <div id="main">
       <h1 id="title">David "The Admiral" Robinson</h1>
-      <div id="img-div">
+      <div class="img-div active" id="bio">
+        <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t1.6435-9/120840864_4491823100859979_7644381391540520053_n.png?_nc_cat=107&ccb=1-7&_nc_sid=973b4a&_nc_ohc=g9XIS5cEShMAX9Qq3hJ&_nc_ht=scontent-dfw5-2.xx&oh=00_AT-S3uVAVharZtdpooRY7_lOa4e4SSITDIGRjrwFbBsX1Q&oe=631688B9" id="image" alt="David Robinson during Naval Service">
+        <p id="img-credit"><span>&copy</span><a href="https://www.facebook.com/TogetherWeServed/posts/military-athletesdavid-robinson-was-one-of-the-best-basketball-players-in-the-co/4491823184193304/">Together We Served Facebook</a></p>
+        <p id="img-caption">David Robinson during his Naval Service.</p>
+        
+      </div>
+      <div class="img-div" id="college">
+        <img src="https://fanbuzz.com/wp-content/uploads/sites/5/2020/12/David-Robinson-Navy.png" id="image" alt="David Robinson playing for the Naval Academy">
+        <p id="img-credit"><span>&copy</span>Manny Millan /Sports Illustrated via Getty Images</p>
+        <p id="img-caption">David Robinson playing for the Naval Academy.</p>
+        
+      </div>
+      <div class="img-div" id="usa">
+        <img src="https://usopm.org/wp-content/uploads/2019/07/ROBINSON-DAVID-1920-16x9.jpg" id="image" alt="David Robinson playing for Team USA">
+        <p id="img-credit"><span>&copy</span><a href="https://usopm.org/david-robinson/">US Olympic & Paralympic Museum</a></p>
+        <p id="img-caption">David Robinson playing for Team USA.</p>
+        
+      </div>
+      <div class="img-div" id="pro">
+        <img src="https://www.wruf.com/wp-content/uploads/2020/04/admiral-660x330.jpeg" id="image" alt="David Robinson playing for the San Antonio Spurs">
+        <p id="img-credit"><span>&copy</span><a href="https://www.wruf.com/headlines/2020/04/10/nba-legend-david-robinson-wants-season-to-resume/">WRUF ESPN radio</a></p>
+        <p id="img-caption">David Robinson playing for the San Antonio Spurs.</p>
+        
+      </div>
+      <div class="img-div" id="hall">
         <img src="https://hoopshype.com/wp-content/uploads/sites/92/2018/03/davidrobinson_halloffame.jpg" id="image" alt="David Robinson at his Hall of Fame induction">
         <p id="img-credit"><span>&copy</span>2009 Getty Images</p>
         <p id="img-caption">David Robinson is inducted into the Naismith Memorial Basketball Hall of Fame.</p>
+        
+      </div>
+      <div class="img-div" id="off">
+        <img src="https://nba.nbcsports.com/wp-content/uploads/sites/12/2016/08/74528880-e1471907532632.jpg?resize=1024,575" id="image" alt="David Robinson still continues humanitarian work today">
+        <p id="img-credit"><span>&copy</span><a href="https://nba.nbcsports.com/2016/11/22/david-robinson-san-antonio-spurs-players-tribune-letter-to-younger-self/">NBC Sports</a></p>
+        <p id="img-caption">David Robinson still continues humanitarian work today.</p>
         
       </div>
       <div id="tribute-info">
@@ -119,6 +149,7 @@
       <script>
         const sections = document.querySelectorAll('.section');
         const tabs = document.querySelectorAll('.tab');
+        const images = document.querySelectorAll('.img-div');
         
         tabs.forEach((tab) => {
           tab.addEventListener("click", contentChange);
@@ -138,6 +169,12 @@
               section.classList.remove('active');
               if (id === section.id){
                 section.classList.add('active');
+              }
+            })
+            images.forEach((image) => {
+              image.classList.remove('active');
+              if (id === image.id){
+                image.classList.add('active');
               }
             })
           }

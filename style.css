@@ -12,7 +12,13 @@ h3 {
   font-style: italic;
 }
 
-#img-div{
+.img-div{
+  display: none;
+  width: 80%;
+  
+}
+
+.img-div.active{
   display: flex;
   flex-direction: column;
   align-items: center;
